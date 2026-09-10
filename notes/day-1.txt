@@ -1,1 +1,29 @@
-https://github.com/joydip-git/siemens-angular-10thsept2026
+angular/angular js
+
+front-end framework
+JS based framework
+Single Page Application (SPA)
+
+components
+data binding
+form data handling
+
+<html>
+    <head>
+        <title>...
+    </head>
+    <body>
+    <h2>...
+    </body>
+</html>
+
+view/template/design
+<table>
+.....
+</table>
+
+code:
+JS/TS
+
+Node JS
+VS Code
