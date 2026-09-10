@@ -16,3 +16,12 @@ payrollapp:
 2. create some objects (with hard coded values)
 3. add them in an array
 4. iterate through them and print the name of every one along with their total salary
+
+enhancement: convert the app to TS based app
+1. create package.json
+2. install typescript (As dev dependency)
+3. create tsconfig.json file and provide the configuration
+4. put your source code in the "src" directory
+5. create scripts for TSC compiler running in the package.json file
+6. runt the script to compile your source code
+7. run the output file (js) in node js or attach the same with an HTML file and run it in browser

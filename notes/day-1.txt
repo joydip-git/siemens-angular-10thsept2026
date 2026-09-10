@@ -79,9 +79,10 @@ object:
 2. constructor function
 
 new features:
-3. class, constructor
-4. extends, super
-5. let and const
+1. class, constructor
+2. extends, super
+3. let and const
+4. templated string
 
 note: a variable declared with let keyword can't be accessed before the declaration
 
@@ -92,6 +93,60 @@ expression style functions can't be called before the expression
 declaration style functions can be called before the declaration
 
 2. execution stage: will execute any function call, assignments etc.
+
+TS:
+-------------
+superset of JS
+
+any -> implicit data type
+
+transpilation: (transformation + compilation)
+----------------------------------------------------
+TS -> JS [Typescript Compiler - TSC]
+
+install TS: >npm i typescript --save-dev
+
+TS compiler configuration:
+---------------------------
+tsconfig.json
+
+create:
+1. manually
+2. using TSC tool
+>.\node_modules\.bin\tsc --init
+
+Install a package:
+-------------------
+using a tool - NPM (Node package manager)
+
+a. global installation: C:\Users\<user-name>\AppData\Roaming\npm
+	>npm i/install <package-name> --global
+
+b. local/app installation: app path
+	>npm i/install <package-name> -D/--save-dev -> development dependency only
+	>npm i/install <package-name> -> complete dependency
+	>npm i/install <package-name> --save -> complete dependency only
+
+a list of packages (dependencies):
+-------------------------------------
+package.json
+
+create:
+1. manually
+2. using NPM tool
+>npm init 
+or
+>npm init --yes
+
+run a script:
+>npm run <script-name>
+>npm run compile:w
+
+do not mention the full path of any executable script file mentioned in the script of yours in package.json file
+npm tool will look for any executable from .\node_modules\.bin folder
+
+
+
 
 
 
