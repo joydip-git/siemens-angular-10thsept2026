@@ -66,3 +66,35 @@ class Trainer extends Person {
         return `${super.print()}, Subject=${this._subject}`
     }
 }
+
+abstract class Reader {
+    constructor(public path: string) {
+
+    }
+    abstract read(): string;
+}
+
+class FileDataReader extends Reader {
+
+    constructor(path: string) {
+        super(path)
+    }
+    read(): string {
+        return "data from " + this.path
+    }
+}
+
+const reader: Reader = new FileDataReader("C:\\data.txt")
+console.log(reader.read());
+
+interface Operations<T, TResult> {
+    addValues(a: T, b: T): TResult;
+}
+class Implementation implements Operations<number, string> {
+    addValues(a: number, b: number): string {
+        return (a + b).toString()
+    }
+}
+
+const ops: Operations<number, string> = new Implementation()
+console.log(ops.addValues(12, 13));

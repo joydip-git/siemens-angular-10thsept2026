@@ -83,6 +83,9 @@ new features:
 2. extends, super
 3. let and const
 4. templated string
+5. module
+	export 
+	import
 
 note: a variable declared with let keyword can't be accessed before the declaration
 
@@ -145,15 +148,20 @@ run a script:
 do not mention the full path of any executable script file mentioned in the script of yours in package.json file
 npm tool will look for any executable from .\node_modules\.bin folder
 
+modules:
+-----------------
 
+IIFE -> Immediately Invocable Function Expression (iify)
 
+common js module format: (default for node js)
+	module.exports = {prop1:member1, prop2:member2,...}
+	const mod = require(path)
 
+asynchronous module definition (AMD) format
+universal module definition (UMD) format
 
-
-
-
-
-
-
+ES module format:[standardized way]
+	export
+	import
 
 
