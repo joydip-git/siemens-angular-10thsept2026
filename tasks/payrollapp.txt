@@ -1,0 +1,18 @@
+payrollapp:
+
+	developer:
+		attributes: id, name, basic, da, hra, incentive, salary
+		functionality: calculateSalary
+			args: NA
+			return: void
+
+	hr:
+		attributes: id, name, basic, da, hra, gratuity, salary
+		functionality: calculateSalary
+			args: NA
+			return: void
+
+1. create classes for those entities
+2. create some objects (with hard coded values)
+3. add them in an array
+4. iterate through them and print the name of every one along with their total salary

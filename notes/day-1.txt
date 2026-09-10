@@ -1,29 +1,104 @@
-angular/angular js
+two different technique to create SPA:
+--------------------------------------
+	angular (new)
+	angular js (old and not supported)
 
-front-end framework
-JS based framework
-Single Page Application (SPA)
+two different ways to create angular app:
+-------------------------------
+app with ONLY client-side rendering
+app with server-side rendering
 
+what is Angular?
+-----------------------
+a front-end JS based framework to create Single Page Application (SPA)
+
+features:
+----------------
 components
 data binding
 form data handling
+routing
+dependency injection
 
-<html>
-    <head>
-        <title>...
-    </head>
-    <body>
-    <h2>...
-    </body>
-</html>
+components: 
+----------------------
+combination of : view/template/design and code (JS/TS)
 
-view/template/design
-<table>
-.....
-</table>
 
-code:
-JS/TS
+JS runtime:
+----------------
+Node JS - developed by Ryan Dahl in 2009
+	
+JS engines:
+-----------------------
+chrome: V8 (open source)
+safari: JS Core (indigo)
+firefox: Spidermonkey
+edge: Chakra -> chromekit
 
-Node JS
-VS Code
+
+JS:
+--------------------
+ECMA which provides guidelines for JS
+guideline: ECMAScript (ES)
+
+JS is loosely typed
+JS is dynamic language
+JS does not have any strict data typing
+JS does not have any static type checking
+
+JS data types:
+------------------
+string, Boolean, number, object
+
+
+operators and control flow statements:
+------------------------------------------
+strict equality and inequality
+
+functions:
+-------------------
+1. declaration syntax:
+
+function name(arg1, arg2,...){
+	return ...
+}
+
+name(...)
+
+2. expression syntax: [callback]
+var fn = function(args...){
+	return...
+}
+
+fn(...)
+
+object:
+---------------
+1. literal syntax
+2. constructor function
+
+new features:
+3. class, constructor
+4. extends, super
+5. let and const
+
+note: a variable declared with let keyword can't be accessed before the declaration
+
+JS execution:
+1. preparation stage: takes into account only declarations (variable and function), NOT any function call, assignments etc. -> hoisting
+note: expression styles functions are not *hoisted*
+expression style functions can't be called before the expression
+declaration style functions can be called before the declaration
+
+2. execution stage: will execute any function call, assignments etc.
+
+
+
+
+
+
+
+
+
+
