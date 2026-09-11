@@ -11,3 +11,5 @@ export class Employee {
         this.salary = this.basicPayment + this.daPayment + this.hraPayment
     }
 }
+
+export const data = 100

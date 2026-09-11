@@ -1,2 +1,10 @@
-callback in JS
+fuctional programmig and callback in JS
 new features
+	- arrow function
+	- object and array destructruring
+	- spread operator
+	- rest operator
+	- ES6 modules
+
+
+TS: custom type using type keyword
