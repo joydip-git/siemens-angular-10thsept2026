@@ -8,3 +8,47 @@ new features
 
 
 TS: custom type using type keyword
+
+Angular:
+-------------------
+A JS based single threaded front-end framework
+It helps to create a SPA
+declarative programming technique
+
+features:
+	components (template + code + metadata)
+	MV-VM architecture
+	services - data access/ business logic etc.
+	dependency injection
+	pipe - converters/transformers
+	directives
+	binding - data and event binding
+	form data handling
+	client-side routing
+	angular modules
+	etc.
+
+		types	
+----------------------------------------------	
+component	class		@Component()
+directive	class		@Directive()
+pipe		class		@Pipe()
+service		class		???
+module		class		@NgModule
+
+create:
+------------
+tool => Angular CLI (ng)
+
+>npm i @angular/cli --global
+
+modular approach and standalone approach
+modular: ng new <app-name> -> modular app [older CLI]
+	 ng new <app-name> -> standalone app [new CLI]
+
+	 ng new <app-name> --standalone=false
+
+
+
+		
+	
