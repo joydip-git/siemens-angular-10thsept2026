@@ -150,18 +150,27 @@ npm tool will look for any executable from .\node_modules\.bin folder
 
 modules:
 -----------------
+an API to expose members of one file to another
 
-IIFE -> Immediately Invocable Function Expression (iify)
+module format:
+-----------------------
 
-common js module format: (default for node js)
+1. IIFE -> Immediately Invocable Function Expression (iify)
+2. common js module format: (default for node js)
 	module.exports = {prop1:member1, prop2:member2,...}
 	const mod = require(path)
 
-asynchronous module definition (AMD) format
-universal module definition (UMD) format
-
-ES module format:[standardized way]
+3. asynchronous module definition (AMD) format
+4. universal module definition (UMD) format
+5. system js format
+6. ES module format:[standardized way]
 	export
 	import
 
+module loader:
+-------------------------
+1. common js module loader 
+2. system js
+3. require js (amd)
+.....
 

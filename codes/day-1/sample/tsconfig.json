@@ -1,0 +1,10 @@
+{
+    "compilerOptions":{
+        "rootDir": "src",
+        "outDir":"dist",
+        "module": "preserve",
+        "target": "es2015",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true
+    }
+}
