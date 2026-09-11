@@ -89,6 +89,28 @@ Binding:
 Zone.js => 
 signal
 
+directives:
+--------------
+they are used like an attribute of an element which ONLY angular understands.
+they
+	- help you to manipulate DOM: structural directives
+	  they are declared with * in template
+	  example: *ngIf, *ngFor, *ngSwitch etc.
+          nowadays are being replaced by @something...
+	  example: @for, @if, @else, @elsif, @switch etc.
+
+	- help you to extend the behavior of the element: attribute directives
+	  they are NOT declared with * in template	
+          example: ngClass, ngStyle, ngForm, ngModel, formElement etc.
+
+	- help you render UI: component directives or components
+	  they are declared with @Component() in code and will have template
+	  note: no other directive has template
+
+
+
+
+
 
 
 

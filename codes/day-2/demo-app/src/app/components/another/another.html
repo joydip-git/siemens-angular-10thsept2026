@@ -17,3 +17,38 @@
         (input)="updateTitle($event.target.value)"> -->
     <!-- <input type="text" id="txtData" [value]="title" [style.width.px]="txtWidth" (input)="updateTitle($event)"> -->
 </div>
+
+<br>
+<br>
+<!-- var norecord = new NgTemplate()-->
+<!-- <ng-template #norecord>
+    <span>No record</span>
+</ng-template> -->
+<!-- <div *ngIf="names().length>0;else norecord"> -->
+@if(names.length>0){
+<div>
+    <label for="listNames">List of Names:&nbsp;</label>
+    <ul id="listNames">
+        <!-- <li *ngFor="let name of names()">{{name}}</li> -->
+        @for(name of names;track $index){
+        <li>{{name}}</li>
+        }
+    </ul>
+</div>
+}@else {
+<span>No names</span>
+}
+
+@if(people().length>0){
+<div>
+    <label for="ddlPeople">List of people: &nbsp;</label>
+    <select id="ddlPeople">
+        <option value="-1" selected disabled>--select--</option>
+        @for(p of people();track $index){
+        <option [value]="p.id">{{p.name}}</option>
+        }
+    </select>
+</div>
+}@else {
+<span>no records </span>
+}
