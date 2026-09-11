@@ -25,3 +25,8 @@ enhancement: convert the app to TS based app
 5. create scripts for TSC compiler running in the package.json file
 6. runt the script to compile your source code
 7. run the output file (js) in node js or attach the same with an HTML file and run it in browser
+
+enhancement:
+1. filter the array of employees and produce an output of those employees whose salary is more than a threshold value (you decide)
+2. again apply another logic on the previous step output to produce an array of objects with only employee name and total salary
+3. appaly the logic on the previous output to print the name and salary of those objects
