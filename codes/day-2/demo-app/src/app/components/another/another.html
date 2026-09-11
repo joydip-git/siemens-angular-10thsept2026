@@ -1,0 +1,19 @@
+<!-- <style>
+    input[type='text'] {
+        width: 400px;
+    }
+</style> -->
+<p>
+    {{title()}}
+</p>
+<br>
+<div>
+    <label for="txtData">
+        Data: &nbsp;
+    </label>
+    <input type="text" id="txtData" [value]="title()" [style.width.px]="txtWidth"
+        (input)="title.set($event.target.value)">
+    <!-- <input type="text" id="txtData" [value]="title()" [style.width.px]="txtWidth"
+        (input)="updateTitle($event.target.value)"> -->
+    <!-- <input type="text" id="txtData" [value]="title" [style.width.px]="txtWidth" (input)="updateTitle($event)"> -->
+</div>

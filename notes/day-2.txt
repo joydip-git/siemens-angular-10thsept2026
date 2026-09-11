@@ -48,6 +48,52 @@ modular: ng new <app-name> -> modular app [older CLI]
 
 	 ng new <app-name> --standalone=false
 
+@Component({}):
+-----------------
+Decorator that marks a class as an Angular component and provides configuration metadata that determines how the component should be processed, instantiated, and used at runtime.
+
+bootstrapApplication():
+---------------------------
+Bootstraps an instance of an Angular application and renders a standalone component as the application's root component.
+
+generate assets using ng cli:
+--------------------------------
+the assets will be generated under "./src/app" directory
+ng g|generate
+	component|c another -> ./src/app/another -> another.ts/.html/.css/.spec.ts
+	service|s
+	pipe|p
+	module|m
+	directive|d
+	....
+
+Binding:
+------------------
+1. passing data from code to the template of the component: data binding
+	syntax:
+	a. {{property-name}} => interpolation
+	   or <element attr="{{property-name}}">
+
+	b.[attr-name]="propty-name" => property binding
+	 <element [attr]="property-name">
+
+	note: interpolation strigifies the data before binding, which property binding syntax does not.
+
+2. passing data from the template to the code of the component: event binding
+	syntax:
+	<element (event-name)="method(args)">
+
+	code:
+	method(data:any){....}
+
+Zone.js => 
+signal
+
+
+
+
+
+
 
 
 		
