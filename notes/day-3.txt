@@ -1,0 +1,31 @@
+sharing data between components:
+---------------------------------
+1. if one component (nested/child) is nested in another (parent)
+	a. how to pass data from parent to its nested component
+		- data binding
+	in nested component create a property 
+	decorate the property with @Input() decorator
+
+	or
+	in nested component create a property by calling input() method which creates a signal based @Input() decorated property (actual type InputSignal<T>)
+
+	pass data from parent component by binding the same to the @Input() decorated property of the nested component (use property binding syntax)
+
+	
+	b. how to pass data from nested to its parent component
+	- event binding
+
+	in nested component create a property and assign it an instance of type EventEmitter<T>
+	decorate the property with @Output() decorator
+
+	or
+	in nested component create a property by calling output() method which creates a signal based @Output() decorated EventEmitter type property (actual type OutputEmmiterRef<T>)
+
+	emit the T type value by triggering the event
+	handle the event in parent component template by binding the same with a method from parent component
+
+2. if two components are in separate component tree (not nested)
+
+lifting the state up
+
+EventEmitter: Use in components with the @Output directive to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance.

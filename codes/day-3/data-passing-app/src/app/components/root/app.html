@@ -1,0 +1,5 @@
+<h2 id="mainHeader" style="background-color: burlywood;">Parent</h2>
+<p>Parent data: &nbsp; {{title}}</p>
+<br>
+
+<app-nested [titleData]="title" (titleDataChanged)="updateTitle($event)"></app-nested>
