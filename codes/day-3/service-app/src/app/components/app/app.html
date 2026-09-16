@@ -1,0 +1,45 @@
+<div>
+  <label for="txtId">Id: &nbsp;</label>
+  <input type="text" id="txtId" value="{{person.id}}" readonly>
+</div>
+<div>
+  <label for="txtName">Name: &nbsp;</label>
+  <input type="text" id="txtName" value="{{person.name|uppercase}}">
+</div>
+<div>
+  <label for="txtSalary">Salary: &nbsp;</label>
+  <input type="text" [value]="person.salary|currency:'INR'">
+</div>
+
+<br><br>
+<div>
+  <label for="ddlChoices">Sort By: &nbsp;</label>
+  <select id="ddlChoices" (change)="getSelectedOption($event)">
+    <option value="0" selected disabled>--select--</option>
+    <!-- <option value="1">Id</option>
+    <option value="2">Name</option>
+    <option value="3">Salary</option> -->
+    @for (choice of choices; track $index) {
+    <option [value]="choice.value">{{choice.text}}</option>
+    }
+  </select>
+</div>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (p of people|sortpeople:selectedOptionValue; track $index) {
+    <tr>
+      <td>{{p.id}}</td>
+      <td>{{p.name|uppercase}}</td>
+      <td>{{p.salary|currency:p.currency}}</td>
+    </tr>
+    }
+  </tbody>
+</table>

@@ -57,6 +57,100 @@ person.salary|currency:'USD':'2'
 
 Services and DI:
 --------------------------
+a place where you can write re-usable piece of logic: business, data access logic etc.
+
+
+1. create:
+------------------
+interface Service{
+	getData():string[];
+}
+class DataService implements Service{
+	getData(){
+		return []
+	}
+}
+
+2. register a provider for the service
+-------------------------------------------------
+
+Register at:
+A. Component level 
+@Component({
+	providers: [//register here]
+})
+
+B. Root Level (in app.config.ts file)
+export const appConfig:ApplicationConfig={
+	providers:[//register here]
+}
+
+provider object:
+-------------------------
+base type:      	Provider
+class provider: 	ClassProvider
+			provide, useClass
+
+value provider: 	ValueProvider
+			provide, useValue
+
+existing provider: 	ExistingProvider
+			provide, useExisting
+
+factory provider: 	FactoryProvider
+			provide, useFactory
+
+create a provider object:
+-----------------------------
+a. token is same as that of the class name
+example: class provider
+{
+	provide: DataService,
+        useClass: DataService
+}
+
+b. token is a string
+example: class provider
+{
+	provide: 'TOKEN',
+        useClass: DataService
+}
+
+c. token is an InjectionToken type object
+
+const TOKEN = new InjectionToken<Service>('TOKEN')
+{
+	provide: TOKEN,
+        useClass: DataService
+}
+
+3. consume the service
+---------------------------------
+	a. through constructor 
+	i. when the token name is same as that of the class name
+	constructor(private ds:DataService){}
+
+	ii. when the token is some string value
+	constructor(@Inject('TOKEN') private ds:Service){}
+
+	iii. when the token is an InjectionToken type object:
+	constructor(@Inject(TOKEN) private ds:Service){}
+
+	b. using inject() method
+
+	i. when the token name is same as that of the class name
+	private ds = inject(DataService)
+
+	ii. when the token is some string value
+	not possible to have DI through inject() method
+
+	iii. when the token is an InjectionToken type object
+	private ds = inject<Service>(TOKEN)
+
+
+
+
+
 
 
 
