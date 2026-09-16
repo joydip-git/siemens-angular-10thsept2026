@@ -148,7 +148,40 @@ const TOKEN = new InjectionToken<Service>('TOKEN')
 	private ds = inject<Service>(TOKEN)
 
 
-@Service()
+@Service() or @Injectable() -> when ????
+
+
+side-effect causing code:
+DO NOT write any such code in constructor
+
+life-cycle of a component:
+-------------------------------
+a component gets destroyed
+	when its parent component gets destroyed
+	when the component is "unmounted" from the browser
+
+1. mounting
+	a. constructor called
+	b. changes event (optional- for the very first time as well every time the nested component receives data from parent through an inout property) -> ngOnChanges
+	c. init event (for the very first time when the component is created after constructor and changes event) -> ngOnInit
+
+	component is rendered in the UI (DOM)
+
+2. update
+	b. changes event (optional)
+
+3. destroy
+	destroy event	-> ngOnDestroy
+
+
+event-name	interface-name		method-name
+------------------------------------------------------
+X		OnX			ngOnX
+changes		OnChanges		ngOnChanges
+init		OnInit			ngOnInit
+destroy		OnDestroy		ngOnDestroy
+
+
 
 
 

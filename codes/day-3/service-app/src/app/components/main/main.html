@@ -1,5 +1,5 @@
-<app-root>
-
-</app-root>
+<button type="button" (click)="show.update((oldShow)=>!oldShow)">{{show()?'Hide':'Show'}}</button>
 <br>
-<app-root></app-root>
+@if(show()){
+<app-root [dob]="data()"></app-root>
+}

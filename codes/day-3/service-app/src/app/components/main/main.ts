@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { App } from '../app';
+import { Component, signal } from '@angular/core';
+import { App } from '../app/app';
 
 @Component({
   imports: [App],
@@ -7,4 +7,7 @@ import { App } from '../app';
   styleUrl: './main.css',
   templateUrl: './main.html',
 })
-export class Main {}
+export class Main {
+  show = signal(false)
+  data = signal(new Date())
+}
