@@ -29,3 +29,8 @@ sharing data between components:
 lifting the state up
 
 EventEmitter: Use in components with the @Output directive to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance.
+
+
+Pipes:
+--------------
+transformer
