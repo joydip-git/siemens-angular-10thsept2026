@@ -36,7 +36,7 @@ Pipes:
 transformer
 
 @Pipe({ name: 'uppercase'})
-export class UppercasePipe{
+export class UppercasePipe implements PipeTransform{
 	transform(value:string,...args:any[]):string{
 		return value.toLocaleUpperCase();
 	}
@@ -53,6 +53,10 @@ person.name|uppercase
 person.salary|currency:'USD':'2'
 
 	=> new CurrencyPipe().transform(person.salary,'USD','2')
+
+
+Services and DI:
+--------------------------
 
 
 

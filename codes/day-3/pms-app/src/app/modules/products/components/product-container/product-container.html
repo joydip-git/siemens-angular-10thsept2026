@@ -1,0 +1,4 @@
+<app-filter-product (filterTextChanged)="filterValue.set($event)">
+</app-filter-product>
+<br>
+<app-product-list [filterText]="filterValue()"></app-product-list>
