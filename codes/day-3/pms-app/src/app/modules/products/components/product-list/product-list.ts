@@ -10,6 +10,7 @@ import { ProductFilterPipe } from '../../pipes/product-filter-pipe';
   templateUrl: './product-list.html',
 })
 export class ProductList {
+  //cosnume the product service
   filterText = input('')
   productRecords = signal(products)
 }

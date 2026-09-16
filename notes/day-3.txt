@@ -148,6 +148,8 @@ const TOKEN = new InjectionToken<Service>('TOKEN')
 	private ds = inject<Service>(TOKEN)
 
 
+@Service()
+
 
 
 
