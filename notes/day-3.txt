@@ -34,3 +34,25 @@ EventEmitter: Use in components with the @Output directive to emit custom events
 Pipes:
 --------------
 transformer
+
+@Pipe({ name: 'uppercase'})
+export class UppercasePipe{
+	transform(value:string,...args:any[]):string{
+		return value.toLocaleUpperCase();
+	}
+}
+
+code:
+imports:[UppercasePipe, CurrencyPipe]
+
+template:
+person.name|uppercase
+
+	=> new UppercasePipe().transform(person.name)
+
+person.salary|currency:'USD':'2'
+
+	=> new CurrencyPipe().transform(person.salary,'USD','2')
+
+
+
