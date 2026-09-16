@@ -1,4 +1,5 @@
 import { Component, EventEmitter, input, Input, InputSignal, output, Output, OutputEmitterRef } from '@angular/core';
+import { User } from '../../models/user';
 
 @Component({
   imports: [],
@@ -10,10 +11,10 @@ export class Nested {
   // @Input("titleData") titlevalue = ""
   // @Output("titleDataChanged") titlevaluechanged = new EventEmitter<string>()
 
-  titlevalue: InputSignal<string> = input("", { alias: "titleData" })
-  titlevaluechanged: OutputEmitterRef<string> = output<string>({ alias: "titleDataChanged" })
+  user: InputSignal<User> = input({ username: "" }, { alias: "userInfo" })
+  userchanged: OutputEmitterRef<User> = output<User>({ alias: "userInfoChanged" })
 
   emitTitleValue(value: string) {
-    this.titlevaluechanged.emit(value)
+    this.userchanged.emit({ username: value })
   }
 }

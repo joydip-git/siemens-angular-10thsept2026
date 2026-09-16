@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Nested } from '../nested/nested';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import { Nested } from '../nested/nested';
   styleUrl: './app.css'
 })
 export class App {
-  title = "data from parent component"
-  updateTitle(newTitle: string) {
-    this.title = newTitle
+  userData: User = { username: "joydip" }
+  updateTitle(newUser: User) {
+    this.userData = newUser
   }
 }

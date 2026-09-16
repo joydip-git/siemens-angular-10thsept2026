@@ -2,5 +2,5 @@
 <br>
 <div>
     <label for="txtValue"></label>
-    <input type="text" [value]="titlevalue()" id="txtValue" (input)="emitTitleValue($event.target.value)"/>
+    <input type="text" [value]="user().username" id="txtValue" (input)="emitTitleValue($event.target.value)" />
 </div>
