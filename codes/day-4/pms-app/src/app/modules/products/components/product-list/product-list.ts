@@ -6,9 +6,10 @@ import { Product } from '../../models/product';
 import { TOKEN } from '../../../../config/constants';
 import { ServiceContract } from '../../services/service-contract';
 import { Subscription } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [UpperCasePipe, CurrencyPipe, ProductFilterPipe],
+  imports: [UpperCasePipe, CurrencyPipe, ProductFilterPipe, RouterLink],
   selector: 'app-product-list',
   styleUrl: './product-list.css',
   templateUrl: './product-list.html',

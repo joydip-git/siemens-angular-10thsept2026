@@ -23,3 +23,50 @@ By default, HttpClient uses the fetch API to make requests. This is strongly rec
 
 provideHttpClient(withXhr());
 
+
+Routing:
+---------------------
+Route: simple type (single route information - path and component to be loaded)
+
+Routes: simple type (array of Route objects)
+
+Router : built-in service type
+the Routes array has to be registered with the Router instance
+
+how?
+provideRouter(route-array): 
+Sets up providers necessary to enable Router functionality for the application. Allows to configure a set of routes as well as extra features that should be enabled
+
+RouterOutlet: built-in component directive
+Acts as a placeholder that Angular dynamically fills based on the current router state.
+Each outlet can have a unique name, determined by the optional name attribute. The name cannot be set or changed dynamically. If not set, default value is "primary".
+
+RouterLink: a built-in directive which helps user to navigate from one to another component without re-loading the app
+
+ActivatedRoute: built-in service class
+it stores current navigation information
+Provides access to information about a route associated with a component that is loaded in an outlet. Use to traverse the RouterState tree and extract information from nodes.
+
+RouterState
+
+
+example:
+-------------------
+product routes
+--------------------
+products		-> ProductContainer [ProductList + FilterProduct]
+products/view/1/test/2	-> ProductDetails { x:"1", y:"2"}
+products/edit		-> EditProduct
+products/add		-> AddProduct
+
+common routes
+------------------------
+home			-> Home
+base-url		-> redirection to /home
+
+anything other than above 
+			-> PageNotFound
+
+			-> DashBorad
+
+
