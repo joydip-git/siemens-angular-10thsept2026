@@ -1,0 +1,30 @@
+@if(!isRequestOver()){
+<span>Loading...please wait</span>
+}@else if (errorInfo()!=='') {
+<span>{{errorInfo()}}</span>
+}@else if (todos().length==0) {
+<span>No recordds</span>
+}@else {
+<table>
+    <thead>
+        <th>Task</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        @for (todo of todos(); track $index) {
+        <tr>
+            <td>{{todo.title}}</td>
+            <td>{{todo.userId}}</td>
+            <td>
+                <input type="checkbox" [checked]="todo.completed">
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+}
+
+<br>
+<br>
+<button type="button" (click)="fetchTodos()" [disabled]="!enabled">Do!!!</button>

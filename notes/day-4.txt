@@ -1,0 +1,25 @@
+HTTP requests from Angular app:
+--------------------------------------
+HttpClient: built-in service class
+provideHttpClient() => method returns the provider for the HttpClient servive
+package: @angular/common/http
+
+HttpClient
+-------------
+a. get() -> a GET http request
+b. post() -> a POST http request
+c. put()-> a PUT http request
+d. delete() -> a DELETE http request
+etc.
+
+HttpClient:
+Configures Angular's HttpClient service to be available for injection.
+
+The HttpClient service is provided in the root by default.
+
+By default, HttpClient will be configured for injection with its default options for XSRF protection of outgoing requests. Additional configuration options can be provided by passing feature functions to provideHttpClient. For example, HTTP interceptors can be added using the withInterceptors(...) feature.
+
+By default, HttpClient uses the fetch API to make requests. This is strongly recommended for applications that use Server-Side Rendering for better performance and compatibility. To use the XMLHttpRequest API instead, add the withXhr feature:
+
+provideHttpClient(withXhr());
+
