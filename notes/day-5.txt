@@ -1,0 +1,36 @@
+Form:
+-----------
+1. template driven form:
+	use some directives to manage the form controls and the form itself
+	package: @angular/forms
+	module: FormsModule
+	directives: ngModel, ngForm, ....
+	
+	@Directive({selector:'[ngModel]'})
+	export class NgModelDirective{}
+
+	@NgModule({
+		declarations:[NgModelDirective],
+		exports:[NgModelDirective]
+	})
+	export class FormsModule{
+	}
+
+2. reactive form
+	control the form controls and the form itself from the code NOT the template
+
+	package: @angular/forms
+	module: ReactiveFormsModule
+	directives: formControl, formControlName, formGroup,...
+	
+	@Directive({selector:'[formControl]'})
+	export class FormControlDirective{}
+
+	@NgModule({
+		declarations:[FormControlDirective],
+		exports:[FormControlDirective]
+	})
+	export class ReactiveFormsModule{
+	}
+
+3. signal-based form

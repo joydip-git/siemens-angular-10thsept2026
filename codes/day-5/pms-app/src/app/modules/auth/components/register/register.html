@@ -1,0 +1,13 @@
+<form ngForm #frm="ngForm" (submit)="submit(frm)">
+    <div>
+        <label for="txtUserName">Username: &nbsp;</label>
+        <input type="text" id="txtUserName" ngModel name="username" #uname="ngModel">
+    </div>
+    <div>
+        <label for="txtPassword">Password: &nbsp;</label>
+        <input type="password" id="txtPassword" ngModel name="password" #pwd="ngModel">
+    </div>
+    <div>
+        <input type="submit" value="Login">
+    </div>
+</form>

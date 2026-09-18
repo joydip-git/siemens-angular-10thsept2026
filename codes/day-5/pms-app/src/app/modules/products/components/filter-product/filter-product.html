@@ -1,0 +1,5 @@
+<div class="row">
+    <label for="txtFilter" class="form-label mt-4">Filter By: &nbsp;</label>
+    <input type="text" id="txtFilter" [value]="filterText()" (input)="emitFilterText($event.target.value)"
+        class="form-control">
+</div>
