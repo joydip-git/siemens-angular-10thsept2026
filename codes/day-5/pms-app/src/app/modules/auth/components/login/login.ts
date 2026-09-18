@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { customPassword } from '../../validators/custompassword-validator';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -18,10 +19,17 @@ export class Login {
   // }
 
   loginForm = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl()
+    username: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, customPassword])
   })
   submit() {
-    console.log(this.loginForm.value);
+    console.log(this.loginForm);
+  }
+
+  get username() {
+    return this.loginForm.get('username')
+  }
+  get password() {
+    return this.loginForm.get('password')
   }
 }

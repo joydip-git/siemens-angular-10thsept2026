@@ -5,12 +5,41 @@
         <!-- <input type="text" id="txtUserName" [formControl]="username"> -->
         <input type="text" id="txtUserName" formControlName="username">
     </div>
+    @if(username?.invalid && (username?.dirty||username?.touched)){
+    <div>
+        @if(username?.errors?.['required']){
+        <span>enter username</span>
+        }
+        @if(username?.errors?.['email']){
+        <span>enter username in email format</span>
+        }
+    </div>
+    }
     <div>
         <label for="txtPassword">Password: &nbsp;</label>
         <!-- <input type="password" id="txtPassword" [formControl]="password"> -->
         <input type="password" id="txtPassword" formControlName="password">
     </div>
+    @if(password?.invalid && (password?.dirty||password?.touched)){
     <div>
-        <input type="submit" value="Login">
+        @if(password?.errors?.['required']){
+        <span>enter password</span>
+        }
+        @if(password?.errors?.['length']){
+        <span>
+            password length should be between {{password?.errors?.['length'].minlen}} and
+            {{password?.errors?.['length'].maxlen}}. current length is: {{password?.errors?.['length'].len}}
+        </span>
+        }
+        @if(password?.errors?.['upper']){
+        <span>password must have at least one upper case letter</span>
+        }
+        @if(password?.errors?.['lower']){
+        <span>password must have at least one lower case letter</span>
+        }
+    </div>
+    }
+    <div>
+        <input type="submit" value="Login" [disabled]="loginForm.invalid">
     </div>
 </form>

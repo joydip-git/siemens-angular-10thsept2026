@@ -1,13 +1,30 @@
 <form ngForm #frm="ngForm" (submit)="submit(frm)">
     <div>
         <label for="txtUserName">Username: &nbsp;</label>
-        <input type="text" id="txtUserName" ngModel name="username" #uname="ngModel">
+        <input type="text" id="txtUserName" ngModel name="username" #uname="ngModel" required email>
     </div>
+    @if(uname.control.invalid && (uname.control.dirty || uname.control.touched)){
+    <div>
+        @if(uname.control.errors?.['required']){
+        <span>enter username</span>
+        }
+        @if(uname.control.errors?.['email']){
+        <span>enter username in email format</span>
+        }
+    </div>
+    }
     <div>
         <label for="txtPassword">Password: &nbsp;</label>
-        <input type="password" id="txtPassword" ngModel name="password" #pwd="ngModel">
+        <input type="password" id="txtPassword" ngModel name="password" #pwd="ngModel" required>
     </div>
+    @if(pwd.control.invalid && (pwd.control.dirty || pwd.control.touched)){
     <div>
-        <input type="submit" value="Login">
+        @if(pwd.control.errors?.['required']){
+        <span>enter password</span>
+        }
+    </div>
+    }
+    <div>
+        <input type="submit" value="Register" [disabled]="frm.invalid">
     </div>
 </form>
