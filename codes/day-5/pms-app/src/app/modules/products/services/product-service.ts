@@ -13,13 +13,13 @@ export class ProductService implements ServiceContract {
         return this.http.get<ApiResponse<Product>>(`${PRODUCT_API_URL}/${id}`)
     }
     add(p: Product): Observable<ApiResponse<Product[]>> {
-        throw new Error("Method not implemented.");
+        return this.http.post<ApiResponse<Product[]>>(PRODUCT_API_URL, p)
     }
     update(id: number, p: Product): Observable<ApiResponse<Product[]>> {
-        throw new Error("Method not implemented.");
+        return this.http.put<ApiResponse<Product[]>>(`${PRODUCT_API_URL}/${id}`, p)
     }
     delete(id: number): Observable<ApiResponse<Product[]>> {
-        throw new Error("Method not implemented.");
+        return this.http.delete<ApiResponse<Product[]>>(`${PRODUCT_API_URL}/${id}`)
     }
     getAll() {
         return this.http.get<ApiResponse<Product[]>>(PRODUCT_API_URL)

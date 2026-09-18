@@ -44,10 +44,28 @@ class Validators{
 		}
 		return null;
 	}
+	static maxLength(control:AbstractControl<any,any,any>,val:number):ValidationErrors|null{
+		if(control.value.length>val){
+			return {
+				maxLength: true
+			}
+		}
+		return null;
+	}
 }
 interface ValidationErrors{
 	[key:string]:any;
 }
+
+/login -> /products
+/products/add -> /login?returnUrl=/products/add
+
+RouterState:
+This is a tree of activated route objects. Every node in this tree knows about the "consumed" URL segments, the extracted parameters, and the resolved data.
+
+
+RouterStateSnapshot: 
+This is a tree of activated route snapshots. Every node in this tree knows about the "consumed" URL segments, the extracted parameters, and the resolved data.
 
 
 

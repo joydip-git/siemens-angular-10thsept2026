@@ -5,6 +5,7 @@ import { User } from '../../models/user';
 import { AuthService } from '../../services/auth-service';
 import { Subscription } from 'rxjs';
 import { TokenStorageService } from '../../../shared/services/token-storage-service';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -24,6 +25,8 @@ export class Login implements OnDestroy {
 
   private authSvcRef = inject(AuthService)
   private tokenStoreSvcRef = inject(TokenStorageService)
+  private router = inject(Router)
+  private currentRoute = inject(ActivatedRoute)
 
   private loginSubscription?: Subscription;
 
@@ -44,6 +47,14 @@ export class Login implements OnDestroy {
       },
       error: (err) => {
         window.alert(err.message)
+      },
+      complete: () => {
+        const snapshot: ActivatedRouteSnapshot = this.currentRoute.snapshot
+        const returnUrl = snapshot.queryParams['returnUrl']
+        if (returnUrl) {
+          this.router.navigate([returnUrl])
+        } else
+          this.router.navigate(['/products'])
       }
     })
   }
